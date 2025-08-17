@@ -1,0 +1,14 @@
+Login.class
+igu\Autenticacion$5.class
+logica\Usuario.class
+persistencia\ControladorPersistencia.class
+igu\Autenticacion$1.class
+igu\Autenticacion$2.class
+logica\Controlador.class
+persitencia\exceptions\PreexistingEntityException.class
+igu\Autenticacion$3.class
+igu\Autenticacion.class
+persistencia\UsuarioJpaController.class
+persitencia\exceptions\IllegalOrphanException.class
+persitencia\exceptions\NonexistentEntityException.class
+igu\Autenticacion$4.class
