@@ -1,4 +1,4 @@
-package persitencia.exceptions;
+package persistencia.exceptions;
 
 /**
  * Excepción lanzada cuando se intenta acceder o modificar una entidad que no existe en la base de datos.
