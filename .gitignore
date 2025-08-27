@@ -22,3 +22,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Carpetas generadas por IDEs
+/.idea/      # IntelliJ IDEA
+/.vscode/    # Visual Studio Code
+/nbproject/  # NetBeans
+
+# Carpetas de compilación
+/out/        # IntelliJ IDEA y otros
+/target/     # Maven y otros
+/build/      #
