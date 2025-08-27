@@ -1,29 +1,27 @@
-
 import igu.Autenticacion;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import persistencia.UsuarioJpaController;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 /**
- *
+ * Clase principal del sistema de Login.
+ * Inicializa la capa de persistencia y lanza la interfaz de autenticación.
+ * 
  * @author kabal
  */
-
 public class Login {
 
+    /**
+     * Método principal. Inicializa la base de datos y muestra la ventana de autenticación.
+     *
+     * @param args Argumentos de línea de comandos (no utilizados).
+     */
     public static void main(String[] args) {
-    // fuerza inicialización de JPA
-    UsuarioJpaController controller = new UsuarioJpaController();
-    controller.getUsuarioCount();  // hace un SELECT y dispara DDL si no existen las tablas
+        // Inicializa el controlador JPA para asegurar la conexión y la creación de tablas
+        UsuarioJpaController controller = new UsuarioJpaController();
+        controller.getUsuarioCount();  // Ejecuta un SELECT para disparar la creación de tablas si es necesario
 
-    // ahora abre la interfaz
-    Autenticacion autenticacion = new Autenticacion();
-    autenticacion.setVisible(true);
-    autenticacion.setLocationRelativeTo(null);
-}
-
+        // Crea y muestra la interfaz de autenticación
+        Autenticacion autenticacion = new Autenticacion();
+        autenticacion.setVisible(true);
+        autenticacion.setLocationRelativeTo(null);
+    }
 }

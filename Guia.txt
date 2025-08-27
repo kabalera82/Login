@@ -1,0 +1,69 @@
+############################  Guía para construir una aplicación de Login en Java con Swing y JPA ############################
+
+============================= Estructura del proyecto =============================
+
+------------------------------ Preparación del entorno ------------------------------
+1. Configuración del proyecto
+    - Crea una base de datos en MySQL.
+
+    - Crea un proyecto Java estándar (puedes usar NetBeans, Eclipse o VS Code).
+
+    - Organiza el código en los siguientes paquetes:
+        - logica
+        - persistencia
+        - persistencia.exceptions
+        - igu (sistema gráfico de usuario)
+
+    - Añade las dependencias necesarias para JPA y el conector de tu base de datos (por ejemplo, MySQL).
+
+    - Crea el archivo persistence.xml en la carpeta META-INF con la configuración de la unidad de persistencia (loginPU), incluyendo usuario, contraseña y URL de la base de datos.
+
+------------------------------ Lógica  (Controlador) ------------------------------
+2. Lógica de autenticación
+    - Implementa la clase Usuario en el paquete controlador como una entidad JPA, con los atributos y métodos necesarios.
+
+    - Crea la clase Controlador en el paquete controlador para manejar la lógica de autenticación.
+
+    - Implementa el método validarUsuario que recibe usuario y contraseña, consulta la base de datos y devuelve un mensaje según el resultado.
+
+------------------------------ Persistencia (persistencia y persistencia.exceptions) ------------------------------
+3. Gestión y Conexion a la base de datos
+    - Crea la clase UsuarioJpaController en el paquete persistencia para gestionar operaciones CRUD sobre la entidad Usuario usando JPA.
+
+    - Implementa métodos para crear, editar, eliminar, buscar y listar usuarios (CRUD).
+
+    - Crea la clase ControladorPersistencia en el paquete persistencia como fachada para acceder a los métodos de persistencia desde la lógica de negocio. Incluye el método traerUsuarios para obtener la lista de usuarios.
+
+    - Implementa las clases de excepción en el paquete persistencia.exceptions:
+        - PreexistingEntityException
+        - NonexistentEntityException
+        - IllegalOrphanException
+
+------------------------------ Interfaz gráfica de usuario (igu) ------------------------------
+4. Interfaz gráfica de usuario
+    - Este paquete contiene las clases relacionadas con la interfaz gráfica de usuario (GUI) utilizando Swing.
+
+    - Crea la clase Autenticacion en el paquete igu extendiendo JFrame.
+
+    - Utiliza el editor visual de NetBeans o código manual para diseñar la ventana de login con campos para:
+        - usuario
+        - contraseña
+        - botones de login y limpiar
+        - área de mensajes
+
+    - Conecta los eventos de los botones a la lógica de negocio usando la clase Controlador.
+
+    - Documenta la clase y los métodos principales.
+
+------------------------------ Clase principal (Login) ------------------------------
+5. Clase principal
+    - Implementa la clase Login con el método main para inicializar la base de datos y mostrar la ventana de autenticación.
+
+------------------------------ Test ------------------------------
+6. Pruebas y ejecución
+    - Ejecuta la aplicación.
+
+    - Prueba el login con diferentes combinaciones de usuario y contraseña para verificar
+
+
+===============================================================================================================================================

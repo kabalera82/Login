@@ -1,38 +1,56 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package persistencia;
 
 import java.io.Serializable;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import logica.Usuario;
+
+import controlador.Usuario;
 
 /**
- *
+ * Controlador JPA para la entidad {@link Usuario}.
+ * <p>
+ * Proporciona métodos para crear, editar, eliminar, buscar y listar usuarios en la base de datos
+ * utilizando la API de persistencia JPA.
+ * </p>
+ * 
+ * <p>
+ * El nombre de la unidad de persistencia debe coincidir con el definido en el archivo persistence.xml.
+ * </p>
+ * 
  * @author kabalera
  */
 public class UsuarioJpaController implements Serializable {
 
     private EntityManagerFactory emf = null;
 
-    // == CREAMOS UN CONSTRUCTOR ===============================================
+    /**
+     * Constructor por defecto.
+     * Inicializa la factoría de entidades con la unidad de persistencia "loginPU".
+     */
     public UsuarioJpaController() {
         // El nombre "loginPU" debe coincidir con el <persistence-unit name="loginPU">
         this.emf = Persistence.createEntityManagerFactory("loginPU");
     }
-    
-   
+
+    /**
+     * Obtiene una nueva instancia de {@link EntityManager} para operaciones de persistencia.
+     *
+     * @return EntityManager para interactuar con la base de datos.
+     */
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    // Crear un nuevo usuario
+    /**
+     * Persiste un nuevo usuario en la base de datos.
+     *
+     * @param usuario Usuario a crear.
+     */
     public void create(Usuario usuario) {
         EntityManager em = getEntityManager();
         try {
@@ -46,7 +64,12 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    // Editar un usuario existente
+    /**
+     * Actualiza un usuario existente en la base de datos.
+     *
+     * @param usuario Usuario con los datos actualizados.
+     * @throws RuntimeException si ocurre un error durante la edición.
+     */
     public void edit(Usuario usuario) {
         EntityManager em = getEntityManager();
         try {
@@ -62,7 +85,12 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    // Eliminar un usuario por ID
+    /**
+     * Elimina un usuario de la base de datos por su identificador.
+     *
+     * @param id Identificador del usuario a eliminar.
+     * @throws RuntimeException si el usuario no existe.
+     */
     public void destroy(int id) {
         EntityManager em = getEntityManager();
         try {
@@ -83,7 +111,12 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    // Buscar un usuario por ID
+    /**
+     * Busca un usuario por su identificador.
+     *
+     * @param id Identificador del usuario.
+     * @return Usuario encontrado o {@code null} si no existe.
+     */
     public Usuario findUsuario(int id) {
         EntityManager em = getEntityManager();
         try {
@@ -93,7 +126,11 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    // Listar todos los usuarios
+    /**
+     * Obtiene la lista de todos los usuarios registrados en la base de datos.
+     *
+     * @return Lista de usuarios.
+     */
     @SuppressWarnings("unchecked")
     public List<Usuario> findUsuarioEntities() {
         EntityManager em = getEntityManager();
@@ -105,7 +142,11 @@ public class UsuarioJpaController implements Serializable {
         }
     }
 
-    // Contar usuarios en la BD
+    /**
+     * Obtiene la cantidad total de usuarios registrados en la base de datos.
+     *
+     * @return Número de usuarios.
+     */
     public int getUsuarioCount() {
         EntityManager em = getEntityManager();
         try {

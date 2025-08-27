@@ -4,7 +4,7 @@
  */
 package igu;
 
-import logica.Controlador;
+import controlador.Controlador;
 
 
 /**
