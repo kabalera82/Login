@@ -1,5 +1,6 @@
 ############################  Guía para construir una aplicación de Login en Java con Swing y JPA ############################
 
+v1.0
 ============================= Estructura del proyecto =============================
 
 ------------------------------ Preparación del entorno ------------------------------
@@ -67,3 +68,15 @@
 
 
 ===============================================================================================================================================
+
+===============================================================================================================================================
+
+############################  Guía para Añadir otra Entidad y conectar Relaciones ############################
+v2.0
+============================= Estructura del proyecto =============================
+
+------------------------------ Lógica  (Controlador) ------------------------------
+1. Lógica de Usuarios
+    - Crea la clase Rol en el paquete controlador como una entidad JPA, con los atributos y métodos necesarios.
+    - Actualiza la clase Usuario para incluir una relación ManyToOne con Rol.
+    - Implementa los métodos necesarios en la clase Controlador para gestionar roles y asignarlos a usuarios.

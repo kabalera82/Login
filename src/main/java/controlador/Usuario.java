@@ -19,26 +19,18 @@ import javax.persistence.Id;
 @Entity
 public class Usuario implements Serializable {
     
-    /**
-     * Identificador único del usuario (clave primaria).
-     */
+    /*** Identificador único del usuario (clave primaria).*/
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
 
-    /**
-     * Nombre del usuario.
-     */
+    /*** Nombre del usuario.*/
     private String nombre;
 
-    /**
-     * Contraseña del usuario.
-     */
+    /*** Contraseña del usuario.*/
     private String pass;
     
-    /**
-     * Constructor por defecto requerido por JPA.
-     */
+    /*** Constructor por defecto requerido por JPA.*/
     public Usuario(){}
     
     /**
@@ -58,47 +50,35 @@ public class Usuario implements Serializable {
      * Obtiene el identificador del usuario.
      * @return id del usuario.
      */
-    public int getId(){
-        return id;
-    }
+    public int getId(){return id;}
 
     /**
      * Establece el identificador del usuario.
      * @param id Nuevo identificador.
      */
-    public void setId(int id){
-        this.id = id;
-    }
+    public void setId(int id){this.id = id;}
     
     /**
      * Obtiene el nombre del usuario.
      * @return nombre del usuario.
      */
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
     /**
      * Establece el nombre del usuario.
      * @param nombre Nuevo nombre.
      */
-    public void setNombre(String nombre){
-        this.nombre = nombre;
-    }
+    public void setNombre(String nombre){this.nombre = nombre;}
     
     /**
      * Obtiene la contraseña del usuario.
      * @return contraseña.
      */
-    public String getPass(){
-        return pass;
-    }
+    public String getPass(){return pass;}
 
     /**
      * Establece la contraseña del usuario.
      * @param pass Nueva contraseña.
      */
-    public void setPass(String pass){
-        this.pass = pass;
-    }
+    public void setPass(String pass){this.pass = pass;}
 }
