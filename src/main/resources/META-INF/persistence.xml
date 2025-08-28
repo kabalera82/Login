@@ -10,6 +10,7 @@
 
     <!-- Entidad -->
     <class>logica.Usuario</class>
+    <class>logica.Rol</class>
 
     <!-- Config DB -->
     <properties>
