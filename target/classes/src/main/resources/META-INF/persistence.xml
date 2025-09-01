@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="2.2"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+
+  <persistence-unit name="kabadev_Login_jar_v1.0PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+    <!-- LISTA EXPLÍCITA DE ENTIDADES -->
+    <class>login.kabadev.controlador.Usuario</class>
+    <class>login.kabadev.controlador.Rol</class>
+
+    <!-- Permite también descubrir clases no listadas (por si añades más) -->
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+    <properties>
+      <!-- JDBC -->
+      <property name="javax.persistence.jdbc.url"
+                value="jdbc:mysql://localhost:3306/login?useSSL=false&amp;serverTimezone=Europe/Madrid&amp;characterEncoding=UTF-8"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="221182"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+
+      <!-- Generación de esquema -->
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+
+      <!-- (Opcional) logging para ver qué hace EclipseLink -->
+      <property name="eclipselink.logging.level" value="FINE"/>
+    </properties>
+  </persistence-unit>
+</persistence>
