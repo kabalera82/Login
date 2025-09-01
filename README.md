@@ -39,12 +39,12 @@ CREATE TABLE usuario (
 );
 
 -- Inserta roles
-INSERT IGNORE INTO rol (id, nombrerol, descripcion)
+INSERT INTO rol (id, nombrerol, descripcion)
 VALUES (1, 'admin', 'Administrador'), (2, 'user', 'Usuario');
-
--- Inserta usuario admin por ejemplo
+-- Inserta usuario administrador (ejemplo)
 INSERT INTO usuario (nombre, pass, fk_rol)
-VALUES ('admin', '1234abc', 1);
+VALUES ('admin', '123abc', 1);
+
 =============================================================
  -- Configuración de persistencia (XML) datos de tu MySQL -- 
 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/login"/>
@@ -61,5 +61,5 @@ configuración del pom.xml
 - tendras que cambiar groudId y segurante mainClass
 
 =========================================================================
-👤 @kabalera82
-📦 GitHub: https://github.com/kabalera82/Login
+@kabalera82
+GitHub: https://github.com/kabalera82/Login
