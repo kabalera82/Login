@@ -21,6 +21,7 @@
 Base de datos MySQL con la siguiente estructura:
    - minimo el admin para poder iniciar -
 ====================================================
+```
 --- CREATE ---
 CREATE DATABASE login;
 USE login;
@@ -44,7 +45,7 @@ VALUES (1, 'admin', 'Administrador'), (2, 'user', 'Usuario');
 -- Inserta usuario administrador (ejemplo)
 INSERT INTO usuario (nombre, pass, fk_rol)
 VALUES ('admin', '123abc', 1);
-
+```
 =============================================================
  -- Configuración de persistencia (XML) datos de tu MySQL -- 
 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/login"/>
